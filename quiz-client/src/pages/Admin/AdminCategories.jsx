@@ -22,7 +22,7 @@ const AdminCategories = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:5000/api/categories", {
+      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/categories`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

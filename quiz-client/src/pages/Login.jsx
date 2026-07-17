@@ -130,8 +130,10 @@ const Login = () => {
     try {
       setLoading(true);
 
+      console.log(process.env.REACT_APP_BASE_URL);
+
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${process.env.REACT_APP_BASE_URL}/api/auth/login`,
         formData,
       );
 

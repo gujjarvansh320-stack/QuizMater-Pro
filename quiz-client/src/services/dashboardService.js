@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/admin/dashboard";
+const API_URL = `${process.env.REACT_APP_BASE_URL}/api/admin/dashboard`;
 
 export const getDashboard = async () => {
   const token = localStorage.getItem("token");

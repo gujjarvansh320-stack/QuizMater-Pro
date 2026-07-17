@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/quiz",
+  baseURL: `${process.env.REACT_APP_BASE_URL}/api/quiz`,
 });
 
 const getToken = () => localStorage.getItem("token");

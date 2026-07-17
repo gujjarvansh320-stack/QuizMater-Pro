@@ -10,8 +10,8 @@ const ForgotPassword = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/forgot-password",
-        { email }
+        `${process.env.REACT_APP_BASE_URL}/api/auth/forgot-password`,
+        { email },
       );
 
       alert(res.data.message);
@@ -38,9 +38,7 @@ const ForgotPassword = () => {
           />
         </div>
 
-        <button className="btn btn-primary w-100">
-          Send Reset Link
-        </button>
+        <button className="btn btn-primary w-100">Send Reset Link</button>
       </form>
 
       <p className="mt-3 text-center">
