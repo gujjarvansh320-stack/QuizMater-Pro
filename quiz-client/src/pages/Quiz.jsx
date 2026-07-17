@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { startQuiz, submitQuiz } from "../services/quizService";
+import { useCallback, useEffect } from "react";
 
 const Quiz = () => {
   const { categoryId } = useParams();
@@ -13,10 +14,6 @@ const Quiz = () => {
 
   const [answers, setAnswers] = useState([]);
 
-  useEffect(() => {
-    fetchQuestions();
-  }, []);
-
   const fetchQuestions = async () => {
     try {
       const data = await startQuiz(categoryId);
@@ -28,6 +25,10 @@ const Quiz = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
 
   const handleAnswer = (optionIndex) => {
     const updatedAnswers = [...answers];

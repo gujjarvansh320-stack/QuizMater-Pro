@@ -13,10 +13,6 @@ const Result = () => {
   const [submitting, setSubmitting] = useState(false);
   const [rated, setRated] = useState(false);
 
-  useEffect(() => {
-    fetchResult();
-  }, []);
-
   const fetchResult = async () => {
     try {
       const data = await getResultById(id);
@@ -28,6 +24,10 @@ const Result = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchResult();
+  }, []);
 
   const handleRating = async () => {
     if (rating === 0) {
