@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getResultById } from "../services/resultService";
 import { addRating } from "../services/ratingService";
@@ -13,21 +13,21 @@ const Result = () => {
   const [submitting, setSubmitting] = useState(false);
   const [rated, setRated] = useState(false);
 
-  const fetchResult = async () => {
-    try {
-      const data = await getResultById(id);
-      setResult(data.result);
-    } catch (error) {
-      console.log(error);
-      alert("Failed to load result");
-    } finally {
-      setLoading(false);
-    }
-  };
+  const fetchResult = useCallback(async () => {
+  try {
+    const data = await getResultById(id);
+    setResult(data.result);
+  } catch (error) {
+    console.log(error);
+    alert("Failed to load result");
+  } finally {
+    setLoading(false);
+  }
+}, [id]);
 
   useEffect(() => {
     fetchResult();
-  }, []);
+  }, [fetchResult]);
 
   const handleRating = async () => {
     if (rating === 0) {
