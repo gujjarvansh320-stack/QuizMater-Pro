@@ -1,0 +1,30 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background:#f8fafc;
+    overflow-x:hidden;
+}
+
+.section-title{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#4F46E5,#06B6D4);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.glass-card{
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.3);
+    transition:.4s;
+}
+
+.glass-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}

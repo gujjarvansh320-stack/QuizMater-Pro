@@ -1,0 +1,51 @@
+.statistics{
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    padding:100px 0;
+
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:35px;
+
+    color:white;
+
+    transition:.4s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    background:rgba(255,255,255,.2);
+
+}
+
+.stat-card h2{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    font-size:18px;
+
+    opacity:.9;
+
+}

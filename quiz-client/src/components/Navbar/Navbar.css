@@ -1,0 +1,151 @@
+.navbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    width:100%;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.navbar-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:80px;
+
+}
+
+.logo{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    text-decoration:none;
+
+}
+
+.logo span{
+
+    color:#2563EB;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.nav-menu a{
+
+    text-decoration:none;
+
+    color:#475569;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-menu a:hover{
+
+    color:#2563EB;
+
+}
+
+.nav-menu .active{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+}
+
+.nav-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.login-btn{
+
+    text-decoration:none;
+
+    color:#111827;
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#EEF2FF;
+
+}
+
+.register-btn{
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    color:white;
+
+    padding:10px 24px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.register-btn:hover{
+
+    transform:translateY(-2px);
+
+    color:white;
+
+}
+
+.profile-icon{
+
+    font-size:32px;
+
+    color:#2563EB;
+
+    cursor:pointer;
+
+}
