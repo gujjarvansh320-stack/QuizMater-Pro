@@ -43,18 +43,18 @@ const registerUser = async (req, res) => {
       password: hashedPassword, verificationToken
     });
 
-    // await sendEmail({
-    //   email: newUser.email,
-    //   subject: "Verify Your Email",
-    //   html: `
-    //     <h2>Welcome to QuizMaster</h2>
-    //     <p>Click the button below to verify your email.</p>
+    await sendEmail({
+      email: newUser.email,
+      subject: "Verify Your Email",
+      html: `
+        <h2>Welcome to QuizMaster</h2>
+        <p>Click the button below to verify your email.</p>
 
-//         <a href="${process.env.CLIENT_URL}/verify-email/${verificationToken}">
-//     Verify Email
-// </a>
-//     `,
-//     });
+        <a href="${process.env.CLIENT_URL}/verify-email/${verificationToken}">
+    Verify Email
+</a>
+    `,
+    });
 
     res.status(201).json({
       success: true,
