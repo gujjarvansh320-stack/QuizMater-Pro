@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu */}
-        <div className={menuOpen ? "nav-wrapper active" : "nav-wrapper"}>
+        <div className={`nav-wrapper ${menuOpen ? "active" : ""}`}>
 
           <ul className="nav-menu">
 
