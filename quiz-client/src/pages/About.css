@@ -1,0 +1,64 @@
+/* About.css */
+.about-page-container {
+  /* Matches the soft background hue of your hero section */
+  background-color: #f8faff; 
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.text-dark-blue {
+  color: #0f172a; /* Deep navy text for primary headings */
+}
+
+.text-primary {
+  /* The vibrant blue from your "Start Quiz" button */
+  color: #2563eb !important; 
+}
+
+.bg-primary-light {
+  /* Soft blue background for icon wrappers */
+  background-color: #eff6ff;
+  border-radius: 12px;
+  padding: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 20px; /* Matches the rounded corners of your home page elements */
+  border: none;
+  /* Soft, dispersed shadow exactly like your floating badges */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px); 
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.06);
+}
+
+.feature-list li {
+  margin-bottom: 16px;
+  color: #475569; /* Slate gray for readable text */
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.tech-icon-wrapper {
+  background-color: #eff6ff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover .tech-icon-wrapper {
+  transform: scale(1.1);
+}

@@ -15,6 +15,8 @@ const ratingRoutes = require("./routes/ratingRoutes");
 
 // Load Environment Variables
 dotenv.config();
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS exists:", !!process.env.EMAIL_PASS);
 
 connectDB();
 
@@ -22,8 +24,18 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin:[
+    "http://localhost:3000",
+    "https://quiz-master-pro-azure.vercel.app",
+  ],
+  credentials:true,
+}));
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("QuizMaster Backend API is Running...");
+});
 
 //Auth Route
 app.use("/api/auth", authRoutes);
@@ -38,9 +50,6 @@ app.use("/api/questions", questionRoutes);
 app.use("/api/quiz", quizRoutes);
 
 // Default Route
-app.get("/", (req, res) => {
-  res.send("QuizMaster Backend API is Running...");
-});
 
 //Results Route
 app.use("/api/results", resultRoutes);

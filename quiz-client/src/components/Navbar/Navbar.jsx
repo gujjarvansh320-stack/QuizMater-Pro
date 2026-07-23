@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
 import { useAuth } from "../../context/AuthContext";
 import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
   const { user, isAuthenticated, logout } = useAuth();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   const handleLogout = () => {
     logout();
+    closeMenu();
     navigate("/login");
   };
 
@@ -19,72 +23,93 @@ const Navbar = () => {
       <div className="container navbar-container">
 
         {/* Logo */}
-        <NavLink to="/" className="logo">
+        <NavLink to="/" className="logo" onClick={closeMenu}>
           Quiz<span>Master</span>
         </NavLink>
 
-        {/* Navigation */}
-        <ul className="nav-menu">
-          <li>
-            <NavLink to="/" end>
-              Home
-            </NavLink>
-          </li>
+        {/* Hamburger */}
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
 
-          <li>
-            <NavLink to="/categories">
-              Categories
-            </NavLink>
-          </li>
+        {/* Menu */}
+        <div className={menuOpen ? "nav-wrapper active" : "nav-wrapper"}>
 
-          <li>
-            <NavLink to="/leaderboard">
-              Leaderboard
-            </NavLink>
-          </li>
+          <ul className="nav-menu">
 
-          <li>
-            <NavLink to="/about">
-              About
-            </NavLink>
-          </li>
-        </ul>
-
-        {/* Right Side */}
-        <div className="nav-buttons">
-
-          {isAuthenticated ? (
-            <>
-              <span style={{ marginRight: "15px", fontWeight: "600" }}>
-                Welcome, {user?.name}
-              </span>
-
-              <FaUserCircle
-                className="profile-icon"
-                style={{ cursor: "pointer", marginRight: "15px" }}
-                onClick={() => navigate("/profile")}
-              />
-
-              <button
-                className="login-btn"
-                onClick={handleLogout}
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <NavLink to="/login" className="login-btn">
-                Login
+            <li>
+              <NavLink to="/" end onClick={closeMenu}>
+                Home
               </NavLink>
+            </li>
 
-              <NavLink to="/register" className="register-btn">
-                Register
+            <li>
+              <NavLink to="/categories" onClick={closeMenu}>
+                Categories
               </NavLink>
+            </li>
 
-              <FaUserCircle className="profile-icon" />
-            </>
-          )}
+            <li>
+              <NavLink to="/leaderboard" onClick={closeMenu}>
+                Leaderboard
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/about" onClick={closeMenu}>
+                About
+              </NavLink>
+            </li>
+
+          </ul>
+
+          <div className="nav-buttons">
+
+            {isAuthenticated ? (
+              <>
+                <span className="welcome-text">
+                  Welcome, {user?.name}
+                </span>
+
+                <FaUserCircle
+                  className="profile-icon"
+                  onClick={() => {
+                    navigate("/profile");
+                    closeMenu();
+                  }}
+                />
+
+                <button
+                  className="login-btn"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <NavLink
+                  to="/login"
+                  className="login-btn"
+                  onClick={closeMenu}
+                >
+                  Login
+                </NavLink>
+
+                <NavLink
+                  to="/register"
+                  className="register-btn"
+                  onClick={closeMenu}
+                >
+                  Register
+                </NavLink>
+              </>
+            )}
+
+          </div>
 
         </div>
       </div>

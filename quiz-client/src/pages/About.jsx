@@ -1,91 +1,94 @@
+import React from 'react';
+import { FaBullseye, FaRocket, FaCheckCircle, FaLaptopCode, FaServer, FaDatabase, FaShieldAlt } from 'react-icons/fa';
+import './About.css'; // Make sure to link the CSS file below
+
 const About = () => {
   return (
-    <div className="container py-5">
+    <div className="about-page-container">
+      <div className="container py-5">
+        
+        {/* Page Header */}
+        <div className="text-center mb-5">
+          <h1 className="display-5 fw-bold text-dark-blue mb-3">About QuizMaster</h1>
+          <p className="lead text-muted mx-auto" style={{ maxWidth: '800px' }}>
+            QuizMaster is a modern online quiz platform designed to help users improve their programming knowledge through interactive quizzes, instant results, ratings, and leaderboards.
+          </p>
+        </div>
 
-      <h1 className="text-center mb-4">
-        About QuizMaster
-      </h1>
+        <div className="row g-4 mb-4">
+          {/* Mission Card */}
+          <div className="col-md-6">
+            <div className="about-card h-100 p-4 p-md-5">
+              <div className="d-flex align-items-center mb-4">
+                <div className="icon-wrapper bg-primary-light text-primary">
+                  <FaBullseye size={26} />
+                </div>
+                <h3 className="ms-3 mb-0 fw-bold">Our Mission</h3>
+              </div>
+              <p className="text-muted lh-lg">
+                Our mission is to make learning programming engaging and enjoyable by providing quizzes across multiple technologies. Whether you're a beginner or an experienced developer, QuizMaster helps you test and strengthen your skills.
+              </p>
+            </div>
+          </div>
 
-      <p className="lead text-center mb-5">
-        QuizMaster is a modern online quiz platform designed to help users
-        improve their programming knowledge through interactive quizzes,
-        instant results, ratings, and leaderboards.
-      </p>
-
-      <div className="row">
-
-        <div className="col-md-6 mb-4">
-          <div className="card shadow p-4 h-100">
-            <h3>🎯 Our Mission</h3>
-            <p>
-              Our mission is to make learning programming engaging and
-              enjoyable by providing quizzes across multiple technologies.
-              Whether you're a beginner or an experienced developer,
-              QuizMaster helps you test and strengthen your skills.
-            </p>
+          {/* Features Card */}
+          <div className="col-md-6">
+            <div className="about-card h-100 p-4 p-md-5">
+              <div className="d-flex align-items-center mb-4">
+                <div className="icon-wrapper bg-primary-light text-primary">
+                  <FaRocket size={26} />
+                </div>
+                <h3 className="ms-3 mb-0 fw-bold">Features</h3>
+              </div>
+              <ul className="feature-list list-unstyled mb-0">
+                <li><FaCheckCircle className="text-primary me-3" /> User Authentication</li>
+                <li><FaCheckCircle className="text-primary me-3" /> Email Verification & Password Reset</li>
+                <li><FaCheckCircle className="text-primary me-3" /> Category-Based Quizzes</li>
+                <li><FaCheckCircle className="text-primary me-3" /> Randomized Questions</li>
+                <li><FaCheckCircle className="text-primary me-3" /> Instant Quiz Results</li>
+                <li><FaCheckCircle className="text-primary me-3" /> User Rating System</li>
+                <li><FaCheckCircle className="text-primary me-3" /> Leaderboard & Admin Dashboard</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="col-md-6 mb-4">
-          <div className="card shadow p-4 h-100">
-            <h3>🚀 Features</h3>
-            <ul>
-              <li>User Authentication</li>
-              <li>Email Verification & Password Reset</li>
-              <li>Category-Based Quizzes</li>
-              <li>Randomized Questions</li>
-              <li>Instant Quiz Results</li>
-              <li>User Rating System</li>
-              <li>Leaderboard</li>
-              <li>Admin Dashboard</li>
-            </ul>
+        {/* Technologies Card */}
+        <div className="about-card p-4 p-md-5 mt-2">
+          <h3 className="fw-bold mb-5 text-center">Technologies Used</h3>
+          <div className="row text-center g-4">
+            <div className="col-6 col-md-3">
+              <div className="tech-icon-wrapper mb-3 mx-auto">
+                <FaLaptopCode size={36} className="text-primary" />
+              </div>
+              <h5 className="fw-bold mb-2">Frontend</h5>
+              <p className="text-muted small mb-0">React.js, Bootstrap, Axios</p>
+            </div>
+            <div className="col-6 col-md-3">
+              <div className="tech-icon-wrapper mb-3 mx-auto">
+                <FaServer size={36} className="text-primary" />
+              </div>
+              <h5 className="fw-bold mb-2">Backend</h5>
+              <p className="text-muted small mb-0">Node.js, Express.js</p>
+            </div>
+            <div className="col-6 col-md-3">
+              <div className="tech-icon-wrapper mb-3 mx-auto">
+                <FaDatabase size={36} className="text-primary" />
+              </div>
+              <h5 className="fw-bold mb-2">Database</h5>
+              <p className="text-muted small mb-0">MongoDB</p>
+            </div>
+            <div className="col-6 col-md-3">
+              <div className="tech-icon-wrapper mb-3 mx-auto">
+                <FaShieldAlt size={36} className="text-primary" />
+              </div>
+              <h5 className="fw-bold mb-2">Authentication</h5>
+              <p className="text-muted small mb-0">JWT & Nodemailer</p>
+            </div>
           </div>
         </div>
 
       </div>
-
-      <div className="card shadow p-4 mt-4">
-
-        <h3>💻 Technologies Used</h3>
-
-        <div className="row mt-3">
-
-          <div className="col-md-3">
-            <h5>Frontend</h5>
-            <p>React.js, Bootstrap, Axios</p>
-          </div>
-
-          <div className="col-md-3">
-            <h5>Backend</h5>
-            <p>Node.js, Express.js</p>
-          </div>
-
-          <div className="col-md-3">
-            <h5>Database</h5>
-            <p>MongoDB</p>
-          </div>
-
-          <div className="col-md-3">
-            <h5>Authentication</h5>
-            <p>JWT & Nodemailer</p>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div className="text-center mt-5">
-
-        <h3>⭐ Why Choose QuizMaster?</h3>
-
-        <p className="mt-3">
-          Practice coding concepts through real interview-style questions,
-          monitor your performance with detailed results, earn ratings,
-          and compete with other learners on the leaderboard.
-        </p>
-
-      </div>
-
     </div>
   );
 };
