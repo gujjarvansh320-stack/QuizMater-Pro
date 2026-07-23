@@ -50,27 +50,40 @@ const registerUser = async (req, res) => {
         <h2>Welcome to QuizMaster</h2>
         <p>Click the button below to verify your email.</p>
 
-        <a href="http://localhost:5000/api/auth/verify-email/${verificationToken}">
-            Verify Email
-        </a>
+        <a href="${process.env.CLIENT_URL}/verify-email/${verificationToken}">
+    Verify Email
+</a>
     `,
     });
 
     res.status(201).json({
-  success: true,
-  message: "Registration successful. Please check your email to verify your account.",
-});
-
-  } catch (error) {
-
-    console.error(error);
-
-    res.status(500).json({
-      success: false,
-      message: "Server Error",
+      success: true,
+      message: "Registration successful. Please check your email to verify your account.",
     });
 
-  }
+  // } catch (error) {
+
+  //   console.error(error);
+
+  //   res.status(500).json({
+  //     success: false,
+  //     message: "Server Error",
+  //   });
+
+  // }
+
+} catch (error) {
+
+  console.error("REGISTER ERROR:", error);
+
+  res.status(500).json({
+    success: false,
+    message: error.message,
+    stack: error.stack,
+  });
+
+}
+
 };
 
 // Login User
