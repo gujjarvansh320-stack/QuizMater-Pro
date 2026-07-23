@@ -61,28 +61,28 @@ const registerUser = async (req, res) => {
       message: "Registration successful. Please check your email to verify your account.",
     });
 
-  // } catch (error) {
+  } catch (error) {
 
-  //   console.error(error);
+    console.error(error);
 
-  //   res.status(500).json({
-  //     success: false,
-  //     message: "Server Error",
-  //   });
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
 
-  // }
+  }
 
-} catch (error) {
+// } catch (error) {
 
-  console.error("REGISTER ERROR:", error);
+//   console.error("REGISTER ERROR:", error);
 
-  res.status(500).json({
-    success: false,
-    message: error.message,
-    stack: error.stack,
-  });
+//   res.status(500).json({
+//     success: false,
+//     message: error.message,
+//     stack: error.stack,
+//   });
 
-}
+// }
 
 };
 
