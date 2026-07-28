@@ -6,7 +6,7 @@ import Register from "../pages/Register";
 import Categories from "../pages/Categories";
 import Quiz from "../pages/Quiz";
 import Result from "../pages/Result";
-// import History from "../pages/History";
+import History from "../pages/History";
 import Profile from "../pages/Profile";
 import NotFound from "../pages/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
@@ -86,6 +86,15 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
+      <Route
+  path="/history"
+  element={
+    <ProtectedRoute>
+      <History />
+    </ProtectedRoute>
+  }
+/>
 
       {/* Admin Routes */}
       {/* <Route

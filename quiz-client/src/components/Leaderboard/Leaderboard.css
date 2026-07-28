@@ -1,4 +1,4 @@
-.leaderboard{
+/* .leaderboard{
 
     padding:100px 0;
 
@@ -116,4 +116,89 @@
 
     transform:translateY(-3px);
 
+} */
+
+
+/* Leaderboard.css */
+
+.text-dark-blue {
+  color: #0f172a;
+}
+
+/* Category Filter Pills */
+.btn-category-pill {
+  background-color: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-category-pill:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-category-pill.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Leaderboard Main Card */
+.leaderboard-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+/* Individual Rows */
+.leaderboard-row {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.leaderboard-row:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-row:hover {
+  background-color: #f8fafc;
+  transform: scale(1.01);
+}
+
+/* Highlight the logged-in user if they are on the board */
+.highlight-current-user {
+  background-color: #eff6ff !important;
+  border: 1px solid #bfdbfe;
+}
+
+/* Avatar Initials */
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.highlight-current-user .avatar-circle {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.rank-badge {
+  width: 35px;
+  text-align: center;
 }

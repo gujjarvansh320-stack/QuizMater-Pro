@@ -71,7 +71,7 @@ const registerUser = async (req, res) => {
     });
 
   }
-
+n
 // } catch (error) {
 
 //   console.error("REGISTER ERROR:", error);

@@ -1,0 +1,44 @@
+History.css
+
+.text-dark-blue {
+  color: #0f172a;
+}
+
+.text-primary {
+  color: #2563eb !important;
+}
+
+.bg-primary-light {
+  background-color: #eff6ff !important;
+}
+
+/* Main Card Wrapper */
+.history-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom Icon Box */
+.icon-box {
+  min-width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Score Badges */
+.score-badge {
+  padding: 10px 20px;
+  border-radius: 14px;
+  min-width: 100px;
+}

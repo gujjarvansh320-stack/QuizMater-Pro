@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navbar from "../components/Navbar/Navbar";
+// import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 import Categories from "../components/Categories/Categories";
 import Features from "../components/Features/Features";
@@ -14,7 +14,7 @@ import Footer from "../components/Footer/Footer";
 const Home = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
        <Categories />
      <Features />
