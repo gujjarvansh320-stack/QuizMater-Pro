@@ -14,10 +14,10 @@ const categorySchema = new mongoose.Schema(
       required: true,
     },
 
-    image: {
-      type: String,
-      default: "",
-    },
+    // image: {
+    //   type: String,
+    //   default: "",
+    // },
 
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
