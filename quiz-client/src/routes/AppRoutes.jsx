@@ -36,20 +36,64 @@ const AppRoutes = () => {
       <Route path="/about" element={<About />} />
 
       {/* --- USER PROTECTED ROUTES --- */}
-      <Route path="/categories" element={<ProtectedRoute><Categories /></ProtectedRoute>} />
-      <Route path="/quiz/:categoryId" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
-      <Route path="/result/:id" element={<ProtectedRoute><Result /></ProtectedRoute>} />
-      <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-      <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
-      <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
+      <Route
+        path="/categories"
+        element={
+          <ProtectedRoute>
+            <Categories />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/quiz/:categoryId"
+        element={
+          <ProtectedRoute>
+            <Quiz />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/result/:id"
+        element={
+          <ProtectedRoute>
+            <Result />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/history"
+        element={
+          <ProtectedRoute>
+            <History />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/leaderboard"
+        element={
+          <ProtectedRoute>
+            <Leaderboard />
+          </ProtectedRoute>
+        }
+      />
 
       {/* --- ADMIN ROUTES (NESTED) --- */}
-      {/* 
-        Because these are wrapped inside AdminLayout, 
-        the Sidebar and AdminNavbar will stay on every page here!
-      */}
-      <Route element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-        <Route path="/Dashboard" element={<Dashboard />} />
+      <Route
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <AdminLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin/categories" element={<AdminCategories />} />
         <Route path="/admin/questions" element={<Questions />} />
         <Route path="/admin/results" element={<Results />} />
