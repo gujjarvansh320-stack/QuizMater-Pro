@@ -28,6 +28,7 @@ app.use(cors({
   origin:[
     "http://localhost:3000",
     "https://quiz-master-pro-azure.vercel.app",
+    "http://139.84.164.122",
   ],
   credentials:true,
 }));
