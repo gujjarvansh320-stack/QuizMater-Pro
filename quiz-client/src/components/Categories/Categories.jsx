@@ -11,14 +11,28 @@ const Categories = () => {
     fetchCategories();
   }, []);
 
+  // const fetchCategories = async () => {
+  //   try {
+  //     const data = await getCategories();
+  //     setCategories(data.categories);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   const fetchCategories = async () => {
-    try {
-      const data = await getCategories();
-      setCategories(data.categories);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  try {
+    const data = await getCategories();
+
+    console.log("API DATA:", data);
+
+    setCategories(data.categories || data || []);
+
+  } catch (error) {
+    console.log(error);
+    setCategories([]);
+  }
+};
 
   return (
     <section className="categories">
@@ -32,7 +46,8 @@ const Categories = () => {
         </p>
 
         <div className="row mt-5">
-          {categories.map((category) => (
+          {/* {categories.map((category) => ( */}
+          {categories?.map((category) => (
             <CategoryCard
               key={category._id}
               icon={<FaCode />}
