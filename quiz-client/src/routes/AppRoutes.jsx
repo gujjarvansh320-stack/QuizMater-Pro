@@ -8,7 +8,7 @@ import Quiz from "../pages/Quiz";
 import Result from "../pages/Result";
 import History from "../pages/History";
 import Profile from "../pages/Profile";
-import NotFound from "../pages/NotFound";
+// import NotFound from "../pages/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
@@ -102,7 +102,7 @@ const AppRoutes = () => {
       </Route>
 
       {/* --- 404 CATCH-ALL --- */}
-      <Route path="*" element={<NotFound />} />
+      {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );
 };
